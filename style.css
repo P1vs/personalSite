@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #e2e2e2;
+    color: #233142;
+}
+
+/* Navbar e Navigazione */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #e2e2e2;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+nav.scrolled {
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 15px 50px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    margin-left: 100px;
+}
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f95959;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+.logo-text h2 {
+    color: #f95959;
+    font-size: 1.5rem;
+}
+.logo-text p {
+    font-size: 0.6rem;
+    color: #233142;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-right: 100px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #233142;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+.nav-links a.active {
+    color: #f95959;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+}
+.nav-links a:hover{
+    color: #f95959;
+}
+
+/* Stile base del Burger (nascosto su schermi grandi) */
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* Lo tiene sopra al menu laterale */
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #233142;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Stile Sezioni Globali */
+section {
+    min-height: 100vh;
+    padding: 100px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.section-title {
+    text-align: left;
+    font-size: 4rem;
+    color: #455d7a;
+    margin-bottom: 20px;
+}
+
+.section-title-line {
+    display: block;
+    width: 300px;
+    max-width: 20vw;
+    height: 6px;
+    background: #f95959;
+    margin-bottom: 30px;
+}
+
+/* Sezione Home (Hero) */
+.hero-header {
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+}
+.hero-header h1 {
+    font-size: 4.5rem;
+    color: #233142;
+    margin-bottom: 10px;
+}
+.hero-header h1 span {
+    color: #f95959;
+}
+.hero-header p {
+    font-style: italic;
+    color: #455d7a98;
+    font-size: 1.2rem;
+}
+
+.hero-content {
+    display: flex;
+    gap: 100px;
+    align-items: stretch;
+    justify-content: center;
+}
+.hero-image {
+    flex: 1;
+    background: #f95959;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-height: 400px;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(246, 90, 91, 0.3);
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.hero-card {
+    flex: 1;
+    background: #233142;
+    border-radius: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.hero-card-content {
+    padding: 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero-card-content h2 {
+    color: #f95959;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.hero-card-content span {
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: #455d7a;
+    margin-bottom: 20px;
+}
+.hero-card-content p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.hero-card-footer {
+    background: #455d7a7a;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero-card-footer span {
+    font-weight: 400;
+}
+.hero-card-footer a button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.hero-card-footer a button:hover {
+    background: white;
+    color: #455d7a;
+}
+
+/* Sezione About Me */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.about-box {
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 6px solid #f95959;
+}
+
+#skills {
+    background: #233142;
+}
+
+#passions {
+    background: #455d7a;
+}
+
+.about-box h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.about-box h3 img {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+
+.about-box h3 span {
+    color: #f95959;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.about-box p {
+    line-height: 1.8;
+    color: #e2e2e2;
+    font-size: 1.1rem;
+}
+
+.about-box div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.about-box div img {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+/* Sezione Works (Carosello) */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    padding: 20px 0;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    padding: 40px 80px;
+    text-align: center;
+}
+.slide h3 {
+    color: #f65a5b;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+.slide p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2a4e58;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-btn.left {
+    left: 20px;
+}
+.carousel-btn.right {
+    right: 20px;
+}
+.carousel-btn:hover {
+    background: #f65a5b;
+}
+
+/* Sezione Contact */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 100%;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #f9fafb;
+    outline: none;
+    transition: border 0.3s;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #f65a5b;
+}
+.contact-form textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+.contact-form button {
+    width: 100%;
+    background: #f65a5b;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.contact-form button:hover {
+    background: #d94d4e;
+}
+
+/* Media Query per dispositivi mobili e tablet */
+@media screen and (max-width: 900px) {
+    nav {
+        padding: 15px 30px;
+    }
+    .burger {
+        display: block;
+    }
+    
+    /* Il menu diventa un pannello laterale a scorrimento */
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Nascosto fuori dallo schermo a destra */
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        background-color: #e2e2e2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%; /* Occupa il 60% dello schermo */
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .logo-text {
+        display: none; /* Nasconde il testo del logo su schermi piccoli */
+    }
+
+    /* Classe aggiunta da JS per mostrare il menu */
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    /* Animazione del burger che si trasforma in una 'X' */
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    
+}

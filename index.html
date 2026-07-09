@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simone Piva - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#home" class="logo">
+            <div class="logo-img">SP</div>
+            <div class="logo-text">
+                <h2>Simone Piva</h2>
+                <p>JUNIOR DEVELOPER</p>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About me</a>
+            <a href="#works" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contacts</a>
+        </div>
+        <div class="burger" id="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero-header">
+            <h1>Simone Piva <span>|</span> Junior Developer</h1>
+            <p>HTML, CSS, JavaScript, MySQL, Python, C++, C#, Java...</p>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="" alt="Simone Piva" style="display: none;">
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-card-content">
+                    <h2>Who am i?</h2>
+                    <span></span>
+                    <p>Sviluppatore Junior appassionato di dati, codice e creazione di contenuti. Navigo tra l'analisi statistica ambientale e la progettazione di complessi database relazionali, unendo la logica rigorosa alla creatività.</p>
+                    <p>Sviluppo soluzioni sia frontend che backend, esplorando continuamente nuove tecnologie per creare progetti solidi e funzionali.</p>
+                </div>
+                <div class="hero-card-footer">
+                    <span>Wanna know more about me?</span>
+                    <a href="#about"><button>Show Me</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <span class="section-title-line"></span>
+
+        <div class="about-grid">
+            <div id="skills" class="about-box">
+                <h3><img src="media/icons/computer.svg"></img><span>|</span>Skills & Competences</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptatem tempore tenetur cupiditate quis explicabo autem est quibusdam facere quos ullam eligendi officia fugit corporis animi, ducimus, a mollitia debitis sunt aliquam. Esse, ipsum. Magni voluptatibus molestias reprehenderit distinctio fugiat.</p>
+                <div>
+                    <img src="media/icons/html-5.svg"></img>
+                    <img src="media/icons/python.svg"></img>
+                    <img src="media/icons/java.svg"></img>
+                    <img src="media/icons/cpp.svg"></img>
+                </div>
+            </div>
+            <div id="passions" class="about-box">
+                <h3><img src="media/icons/joistick.svg"></img><span>|</span>Passions & Hobbies</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptatem tempore tenetur cupiditate quis explicabo autem est quibusdam facere quos ullam eligendi officia fugit corporis animi, ducimus, a mollitia debitis sunt aliquam. Esse, ipsum. Magni voluptatibus molestias reprehenderit distinctio fugiat.</p>
+                <div>
+                    <img src="media/icons/film.svg"></img>
+                    <img src="media/icons/music.svg"></img>
+                    <img src="media/icons/plank.svg"></img>
+                    <img src="media/icons/knife.svg"></img>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2 class="section-title">Projects</h2>
+        <span class="section-title-line"></span>
+        <div class="carousel-container">
+            <button class="carousel-btn left" onclick="moveSlide(-1)">&#10094;</button>
+
+            <div class="carousel-track" id="track">
+                <div class="slide">
+                    <h3>🎬 Progettazione Database Cinema</h3>
+                    <p>Sviluppo e architettura completa di un database relazionale propedeutico alla gestione di un cinema multisala nella provincia di Bergamo, con implementazione avanzata di chiavi esterne, trigger e query complesse.</p>
+                </div>
+                <div class="slide">
+                    <h3>📊 Modelli Dati Ambientali in R</h3>
+                    <p>Creazione di script avanzati nel linguaggio R per l'estrazione, il filtraggio e l'analisi statistica di set di dati complessi relativi alle concentrazioni di PM10 e NH3, includendo la generazione di heatmap di correlazione.</p>
+                </div>
+                <div class="slide">
+                    <h3>🎥 Sviluppo Asset per Twitch</h3>
+                    <p>Design e programmazione di overlay interattivi, chat-box a tema e scene personalizzate per arricchire l'esperienza visiva, ottimizzare lo stream e migliorare l'engagement della community durante le dirette.</p>
+                </div>
+            </div>
+
+            <button class="carousel-btn right" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <span class="section-title-line"></span>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Messaggio inviato con successo!');">
+            <input type="text" placeholder="Il tuo nome" required>
+            <input type="email" placeholder="La tua email" required>
+            <textarea placeholder="Scrivi il tuo messaggio qui..." required></textarea>
+            <button type="submit">Invia Messaggio</button>
+        </form>
+    </section>
+    
+    <div id="footer">
+        <a href="https://lordicon.com/">Icons by Lordicon.com</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
