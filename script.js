@@ -47,10 +47,10 @@ function moveSlide(direction) {
     currentIndex += direction;
 
     // Gestione del ciclo infinito del carosello
-    if (currentIndex >= slides.length) {
+    if (currentIndex >= slides.length - 2) {
         currentIndex = 0;
     } else if (currentIndex < 0) {
-        currentIndex = slides.length - 1;
+        currentIndex = slides.length - 3;
     }
 
     updateCarousel();
