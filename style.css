@@ -587,10 +587,9 @@ section {
         display: block;
     }
     
-    /* Il menu diventa un pannello laterale a scorrimento */
     .nav-links {
         position: fixed;
-        right: -100%; /* Nascosto fuori dallo schermo a destra */
+        right: -100%;
         top: 0;
         margin: 0;
         height: 100vh;
@@ -599,7 +598,7 @@ section {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 60%; /* Occupa il 60% dello schermo */
+        width: 70%;
         transition: right 0.4s ease-in-out;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     }
@@ -609,15 +608,13 @@ section {
     }
 
     .logo-text {
-        display: none; /* Nasconde il testo del logo su schermi piccoli */
+        display: none;
     }
 
-    /* Classe aggiunta da JS per mostrare il menu */
     .nav-links.nav-active {
         right: 0;
     }
 
-    /* Animazione del burger che si trasforma in una 'X' */
     .burger.toggle .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -628,5 +625,127 @@ section {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
+    .section-title {
+        font-size: 2.8rem;
+    }
     
+    .hero-header h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Media Query per Schermi Grandi / Desktop (>= 1200px) */
+@media screen and (min-width: 1200px) {
+    section {
+        padding: 140px 6vw 80px;
+        /* Rimuove qualsiasi limitazione di max-width sulla sezione principale */
+        max-width: 100%;
+    }
+
+    .hero-header,
+    .hero-content,
+    .about-grid,
+    .carousel-container,
+    .contact-container,
+    .section-title,
+    .section-title-line {
+        max-width: 1700px; /* I contenuti si espandono elegantemente su schermi grandi */
+    }
+
+    /* Titoli più d'impatto */
+    .section-title {
+        font-size: 4rem;
+    }
+
+    .section-title-line {
+        width: 250px;
+        margin-bottom: 50px;
+    }
+
+    /* Sezione Hero (Home) */
+    .hero-header h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero-content {
+        gap: 60px;
+        align-items: center;
+    }
+
+    .hero-image {
+        max-width: 500px;
+        min-height: 440px;
+    }
+
+    .hero-card {
+        max-width: 850px;
+        flex: 1.5;
+    }
+
+    .hero-card-content {
+        padding: 50px;
+    }
+
+    .hero-card-content h2 {
+        font-size: 2.6rem;
+    }
+
+    .hero-card-content p {
+        font-size: 1.15rem;
+    }
+
+    /* Sezione About Me */
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .about-box {
+        padding: 50px;
+    }
+
+    .about-box p {
+        font-size: 1.15rem;
+    }
+
+    /* Sezione Projects (Carosello) */
+    .carousel-container {
+        padding: 50px 75px;
+        min-height: 520px;
+    }
+
+    .slide {
+        padding: 35px 30px;
+    }
+
+    .slide h3 {
+        font-size: 2rem;
+    }
+
+    .slide p {
+        font-size: 1.05rem;
+    }
+
+    /* Sezione Contatti */
+    .contact-container {
+        gap: 60px;
+        align-items: stretch;
+    }
+
+    .contact-infos {
+        max-width: 500px;
+        flex: 1;
+        justify-content: space-between;
+    }
+
+    .contact-link {
+        font-size: 1.4rem;
+        padding: 22px 30px;
+    }
+
+    .contact-form {
+        max-width: 900px;
+        flex: 1.5;
+        padding: 50px;
+    }
 }
