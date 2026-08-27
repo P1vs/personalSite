@@ -341,54 +341,67 @@ section {
 .carousel-container {
     position: relative;
     width: 100%;
-    min-height: 600px;
+    min-height: 480px;
     background: #233142;
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     overflow: hidden;
-    padding: 20px 0;
+    padding: 40px 65px; /* Spazio laterale per le frecce */
 }
+
 .carousel-track {
     display: flex;
+    gap: 20px;
     transition: transform 0.5s ease-in-out;
 }
+
 .slide {
-    min-width: 34%;
-    padding: 50px 80px;
+    flex: 0 0 calc((100% - 40px) / 3); /* 3 schede visibili su Desktop */
+    background: #1a2533;
+    padding: 30px 25px;
+    border-radius: 15px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .slide h3 {
     color: #f95959;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
+
 .slide p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
+    font-weight: 400;
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .slide span {
     display: block;
-    width: 70%;
+    width: 50%;
     height: 3px;
     background: #455d7a;
-    margin: auto;
-    margin-bottom: 30px;
+    margin: 0 auto 20px;
 }
 
 .slide-button {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     background: transparent;
     border: 2px solid #f95959;
     color: #f95959;
-    padding: 10px 25px;
+    padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s;
 }
+
 .slide-button:hover {
     background: white;
     border-color: white;
@@ -399,13 +412,13 @@ section {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #2a4e58;
+    background: #455d7a;
     color: white;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border-radius: 50%;
     z-index: 10;
     transition: background 0.3s;
@@ -413,14 +426,33 @@ section {
     justify-content: center;
     align-items: center;
 }
+
 .carousel-btn.left {
-    left: 20px;
+    left: 15px;
 }
+
 .carousel-btn.right {
-    right: 20px;
+    right: 15px;
 }
+
 .carousel-btn:hover {
     background: #f95959;
+}
+
+/* Responsività Carosello */
+@media screen and (max-width: 1024px) {
+    .slide {
+        flex: 0 0 calc((100% - 20px) / 2); /* 2 schede visibili su Tablet */
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .slide {
+        flex: 0 0 100%; /* 1 scheda visibile su Mobile */
+    }
+    .carousel-container {
+        padding: 40px 55px;
+    }
 }
 
 /* Sezione Contact */

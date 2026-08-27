@@ -18,65 +18,88 @@ window.addEventListener('scroll', () => {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        // Se abbiamo scrollato fino a un terzo della sezione, la consideriamo attiva
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+        if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
             current = section.getAttribute('id');
         }
     });
 
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
+        const hrefAttr = link.getAttribute('href');
+        if (hrefAttr && hrefAttr.startsWith('#') && hrefAttr.substring(1) === current) {
             link.classList.add('active');
         }
     });
 });
 
-// 3. Logica del Carosello per la sezione Works
+// 3. Logica del Carosello per la sezione Works (Multi-scheda)
 const track = document.getElementById('track');
-const slides = Array.from(track.children);
+const slides = track ? Array.from(track.children) : [];
 let currentIndex = 0;
 
+// Determina quante schede sono visibili in base alla larghezza dello schermo
+function getVisibleSlides() {
+    const width = window.innerWidth;
+    if (width <= 650) return 1;
+    if (width <= 1024) return 2;
+    return 3;
+}
+
 function updateCarousel() {
-    // Calcola la larghezza dinamica della slide in base allo schermo
+    if (!track || slides.length === 0) return;
+
+    const visibleSlides = getVisibleSlides();
+    const maxIndex = Math.max(0, slides.length - visibleSlides);
+
+    // Impedisce di scorrere in spazi vuoti oltre l'ultima scheda
+    if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+    }
+
     const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+    const gap = 20; // Deve corrispondere al gap definito nel CSS (.carousel-track)
+    const moveAmount = (slideWidth + gap) * currentIndex;
+
+    track.style.transform = `translateX(-${moveAmount}px)`;
 }
 
 function moveSlide(direction) {
+    if (slides.length === 0) return;
+
+    const visibleSlides = getVisibleSlides();
+    const maxIndex = Math.max(0, slides.length - visibleSlides);
+
     currentIndex += direction;
 
-    // Gestione del ciclo infinito del carosello
-    if (currentIndex >= slides.length - 2) {
-        currentIndex = 0;
+    if (currentIndex > maxIndex) {
+        currentIndex = 0; // Torna all'inizio
     } else if (currentIndex < 0) {
-        currentIndex = slides.length - 3;
+        currentIndex = maxIndex; // Va all'ultimo gruppo di progetti
     }
 
     updateCarousel();
 }
 
+// Inizializza e aggiorna al resize della finestra
+window.addEventListener('resize', updateCarousel);
+
 // 4. Logica del Burger Menu Mobile
 const burger = document.getElementById('burger');
 const nav = document.querySelector('.nav-links');
-const navLinksItemsDesktop = document.querySelectorAll('.nav-links a'); // Riuso quelli esistenti
+const navLinksItemsDesktop = document.querySelectorAll('.nav-links a');
 
-// Apri e chiudi il menu al click del burger
-burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-});
-
-// Chiudi il menu automaticamente quando l'utente seleziona un link
-navLinksItemsDesktop.forEach(link => {
-    link.addEventListener('click', () => {
-        // Rimuove le classi attive solo se il menu è aperto (modalità mobile)
-        if (nav.classList.contains('nav-active')) {
-            nav.classList.remove('nav-active');
-            burger.classList.remove('toggle');
-        }
+if (burger && nav) {
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
     });
-});
 
-// Ricalcola le dimensioni se la finestra viene ridimensionata
-window.addEventListener('resize', updateCarousel);
+    navLinksItemsDesktop.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('nav-active')) {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+            }
+        });
+    });
+}
