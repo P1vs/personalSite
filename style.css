@@ -26,6 +26,7 @@ nav {
     top: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 50px;
     background: #e2e2e2;
     transition: all 0.3s ease-in-out;
@@ -40,7 +41,7 @@ nav.scrolled {
     align-items: center;
     gap: 15px;
     text-decoration: none;
-    margin-left: 100px;
+    margin-left: 5vw;
 }
 .logo-img {
     width: 50px;
@@ -66,7 +67,7 @@ nav.scrolled {
     display: flex;
     gap: 30px;
     align-items: center;
-    margin-right: 100px;
+    margin-right: 5vw;
 }
 .nav-links a {
     text-decoration: none;
@@ -85,11 +86,11 @@ nav.scrolled {
     color: #f95959;
 }
 
-/* Stile base del Burger (nascosto su schermi grandi) */
+/* Burger Menu */
 .burger {
     display: none;
     cursor: pointer;
-    z-index: 1001; /* Lo tiene sopra al menu laterale */
+    z-index: 1001;
 }
 .burger div {
     width: 25px;
@@ -99,43 +100,58 @@ nav.scrolled {
     transition: all 0.3s ease;
 }
 
-/* Stile Sezioni Globali */
+/* Sezioni Globali */
+/* Sezioni Globali - Sfondo a tutta larghezza (100vw) */
 section {
     min-height: 100vh;
-    padding: 100px 50px 50px;
+    width: 100%;
+    max-width: 100%; /* Copre l'intera larghezza dello schermo */
+    padding: 120px 5vw 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Centra il contenuto interno */
+    margin: 0;
+}
+
+/* Contenitore interno per limitare e centrare i testi e le card */
+.hero-header,
+.hero-content,
+.about-grid,
+.carousel-container,
+.contact-container,
+.section-title,
+.section-title-line {
     width: 100%;
-    margin: 0 auto;
+    max-width: 1600px; /* Mantiene i contenuti ben proporzionati */
+    margin-left: auto;
+    margin-right: auto;
 }
 .section-title {
     text-align: left;
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: #455d7a;
-    margin-bottom: 20px;
-    margin-left: 6vw;
+    margin-bottom: 15px;
+    margin-left: 0;
 }
 
 .section-title-line {
     display: block;
-    width: 300px;
+    width: 200px;
     max-width: 20vw;
     height: 6px;
     background: #f95959;
-    margin-bottom: 30px;
-    margin-left: 6vw;
+    margin-bottom: 40px;
+    margin-left: 0;
 }
 
 /* Sezione Home (Hero) */
 .hero-header {
     text-align: left;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 .hero-header h1 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     color: #233142;
     margin-bottom: 10px;
 }
@@ -144,26 +160,28 @@ section {
 }
 .hero-header p {
     font-style: italic;
-    color: #455d7a98;
+    color: #455d7a;
     font-size: 1.2rem;
 }
 
 .hero-content {
     display: flex;
-    gap: 100px;
+    gap: 50px;
     align-items: stretch;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .hero-image {
     flex: 1;
+    min-width: 280px;
+    max-width: 450px;
     background: #f95959;
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    min-height: 400px;
-    max-width: 500px;
+    min-height: 350px;
     box-shadow: 0 10px 30px rgba(246, 90, 91, 0.3);
 }
 .hero-image img {
@@ -174,13 +192,14 @@ section {
 }
 
 .hero-card {
-    flex: 1;
+    flex: 1.2;
+    min-width: 300px;
     background: #233142;
     border-radius: 30px;
     color: white;
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 650px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
@@ -193,9 +212,8 @@ section {
 }
 .hero-card-content h2 {
     color: #f95959;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
 }
 .hero-card-content span {
     display: block;
@@ -206,17 +224,19 @@ section {
 }
 .hero-card-content p {
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .hero-card-footer {
-    background: #455d7a7a;
-    padding: 25px 40px;
+    background: rgba(69, 93, 122, 0.5);
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 .hero-card-footer span {
     font-weight: 400;
@@ -242,10 +262,10 @@ section {
 }
 
 .about-grid {
-    max-width: 1600px;
+    width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
 }
 .about-box {
@@ -267,6 +287,9 @@ section {
     color: white;
     margin-bottom: 20px;
     font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .about-box h3 img {
@@ -277,32 +300,32 @@ section {
 
 .about-box h3 span {
     color: #f95959;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 0 5px;
 }
 
 .about-box p {
     line-height: 1.8;
     color: #e2e2e2;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 
 .about-box div {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .about-box div img {
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
-/* Sezione Works (Carosello) */
-
+/* Sezione Works (Carosello a 3 schede) */
 #works {
     background: #f95959;
 }
