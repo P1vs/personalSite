@@ -22,7 +22,7 @@
             <a href="#works" class="nav-link">Projects</a>
             <a href="#contact" class="nav-link">Contacts</a>
         </div>
-        <div class="burger" id="burger">
+        <div class="burger" id="burger" aria-label="Menu di navigazione">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
@@ -37,7 +37,7 @@
 
         <div class="hero-content">
             <div class="hero-image">
-                <img src="" alt="Simone Piva" style="display: none;">
+                <img src="media/pictures/profile.jpg" alt="Simone Piva" onerror="this.style.display='none';">
             </div>
 
             <div class="hero-card">
@@ -61,23 +61,23 @@
 
         <div class="about-grid">
             <div id="skills" class="about-box">
-                <h3><img src="media/icons/computer.svg"></img><span>|</span>Skills & Competences</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptatem tempore tenetur cupiditate quis explicabo autem est quibusdam facere quos ullam eligendi officia fugit corporis animi, ducimus, a mollitia debitis sunt aliquam. Esse, ipsum. Magni voluptatibus molestias reprehenderit distinctio fugiat.</p>
+                <h3><img src="media/icons/computer.svg" alt="Computer icon"><span>|</span>Skills & Competences</h3>
+                <p>Competenze trasversali nello sviluppo software, dalla programmazione object-oriented in Java, C++ e C# alla creazione di interfacce web responsive con HTML, CSS e JavaScript. Gestione di basi di dati relazionali con MySQL e scripting in Python.</p>
                 <div>
-                    <img src="media/icons/html-5.svg"></img>
-                    <img src="media/icons/python.svg"></img>
-                    <img src="media/icons/java.svg"></img>
-                    <img src="media/icons/cpp.svg"></img>
+                    <img src="media/icons/html-5.svg" alt="HTML5">
+                    <img src="media/icons/python.svg" alt="Python">
+                    <img src="media/icons/java.svg" alt="Java">
+                    <img src="media/icons/cpp.svg" alt="C++">
                 </div>
             </div>
             <div id="passions" class="about-box">
-                <h3><img src="media/icons/joistick.svg"></img><span>|</span>Passions & Hobbies</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptatem tempore tenetur cupiditate quis explicabo autem est quibusdam facere quos ullam eligendi officia fugit corporis animi, ducimus, a mollitia debitis sunt aliquam. Esse, ipsum. Magni voluptatibus molestias reprehenderit distinctio fugiat.</p>
+                <h3><img src="media/icons/joystick.svg" alt="Joystick icon"><span>|</span>Passions & Hobbies</h3>
+                <p>Appassionato di tecnologia, gaming, cinematografia e produzione musicale. Credo fermamente che coltivare hobby creativi arricchisca il problem-solving e l'attenzione al dettaglio anche nella scrittura del codice.</p>
                 <div>
-                    <img src="media/icons/film.svg"></img>
-                    <img src="media/icons/music.svg"></img>
-                    <img src="media/icons/plank.svg"></img>
-                    <img src="media/icons/knife.svg"></img>
+                    <img src="media/icons/film.svg" alt="Film">
+                    <img src="media/icons/music.svg" alt="Music">
+                    <img src="media/icons/plank.svg" alt="Fitness">
+                    <img src="media/icons/knife.svg" alt="Cooking">
                 </div>
             </div>
         </div>
@@ -87,72 +87,67 @@
         <h2 class="section-title">Projects</h2>
         <span class="section-title-line"></span>
         <div class="carousel-container">
-            <button class="carousel-btn left" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn left" onclick="moveSlide(-1)" aria-label="Progetto precedente">&#10094;</button>
 
             <div class="carousel-track" id="track">
                 <div class="slide">
                     <h3>Project 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam labore eaque tenetur saepe dolorem culpa minus quis nulla, exercitationem reprehenderit cupiditate similique recusandae sapiente laboriosam, vero ullam soluta nesciunt quidem inventore tempore quam consequuntur aperiam! Magni voluptas asperiores repellat! Dignissimos.</p>
+                    <p>Applicativo web interattivo sviluppato con JavaScript e CSS avanzato per la gestione e visualizzazione di dati statistici ambientali in tempo reale.</p>
                     <span></span>
                     <button class="slide-button">View Project</button>
                 </div>
                 <div class="slide">
-                    <h3>Peroject 2</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam labore eaque tenetur saepe dolorem culpa minus quis nulla, exercitationem reprehenderit cupiditate similique recusandae sapiente laboriosam, vero ullam soluta nesciunt quidem inventore tempore quam consequuntur aperiam! Magni voluptas asperiores repellat! Dignissimos.</p>
+                    <h3>Project 2</h3>
+                    <p>Sistema backend relazionale strutturato in MySQL e Python per l'automazione del flusso di dati aziendali e reportistica avanzata.</p>
                     <span></span>
                     <button class="slide-button">View Project</button>
                 </div>
                 <div class="slide">
                     <h3>Project 3</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam labore eaque tenetur saepe dolorem culpa minus quis nulla, exercitationem reprehenderit cupiditate similique recusandae sapiente laboriosam, vero ullam soluta nesciunt quidem inventore tempore quam consequuntur aperiam! Magni voluptas asperiores repellat! Dignissimos.</p>
+                    <p>Software desktop orientato agli oggetti realizzato in C#/.NET con interfaccia utente pulita e ottimizzata per performance elevate.</p>
                     <span></span>
                     <button class="slide-button">View Project</button>
                 </div>
                 <div class="slide">
                     <h3>Project 4</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam labore eaque tenetur saepe dolorem culpa minus quis nulla, exercitationem reprehenderit cupiditate similique recusandae sapiente laboriosam, vero ullam soluta nesciunt quidem inventore tempore quam consequuntur aperiam! Magni voluptas asperiores repellat! Dignissimos.</p>
+                    <p>Piattaforma portfolio personale responsive con animazioni fluide, gestione del tema e sezioni dinamiche basate su componenti modulari.</p>
                     <span></span>
                     <button class="slide-button">View Project</button>
                 </div>
                 <div class="slide">
                     <h3>Project 5</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam labore eaque tenetur saepe dolorem culpa minus quis nulla, exercitationem reprehenderit cupiditate similique recusandae sapiente laboriosam, vero ullam soluta nesciunt quidem inventore tempore quam consequuntur aperiam! Magni voluptas asperiores repellat! Dignissimos.</p>
+                    <p>Tool di analisi dati in C++ focalizzato sull'efficienza computazionale e sull'elaborazione rapida di grandi dataset numerici.</p>
                     <span></span>
                     <button class="slide-button">View Project</button>
                 </div>
                 <div class="slide">
                     <h3>Project 6</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam labore eaque tenetur saepe dolorem culpa minus quis nulla, exercitationem reprehenderit cupiditate similique recusandae sapiente laboriosam, vero ullam soluta nesciunt quidem inventore tempore quam consequuntur aperiam! Magni voluptas asperiores repellat! Dignissimos.</p>
+                    <p>Progetto collaborativo full-stack incentrato sulla UX/UI e su pratiche di codice pulito, test e versionamento tramite Git.</p>
                     <span></span>
                     <button class="slide-button">View Project</button>
                 </div>
             </div>
 
-            <button class="carousel-btn right" onclick="moveSlide(1)">&#10095;</button>
+            <button class="carousel-btn right" onclick="moveSlide(1)" aria-label="Progetto successivo">&#10095;</button>
         </div>
     </section>
 
-    
     <section id="contact">
         <h2 class="section-title">Contact Me</h2>
         <span class="section-title-line"></span>
         <div class="contact-container">
             <div class="contact-infos">
-                <a href="" class="contact-link">
+                <a href="https://github.com/P1vs" target="_blank" rel="noopener noreferrer" class="contact-link">
                     <img src="media/icons/github.svg" alt="GitHub Icon">
-                    Git Hub
+                    GitHub
                 </a>
-                <a href="" class="contact-link">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link">
                     <img src="media/icons/linkedin.svg" alt="Linkedin Icon">
-                    Linkedin
+                    LinkedIn
                 </a>
-                <a href="" class="contact-link">
+                <a href="mailto:pivasimo3@gmail.com" class="contact-link">
                     <img src="media/icons/mail.svg" alt="mail Icon">
                     pivasimo3@gmail.com
-                </a>
-                <a href="" class="contact-link">
-                    <img src="media/icons/phone.svg" alt="phone Icon">
-                    392 608 4001
                 </a>
             </div>
             <form class="contact-form" onsubmit="event.preventDefault(); alert('Messaggio inviato con successo!');">
