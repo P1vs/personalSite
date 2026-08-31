@@ -173,3 +173,15 @@ if (burger && nav) {
         });
     });
 }
+
+// 6. Gestione Invio Modulo Contatti
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Evita il ricaricamento della pagina
+        
+        // Qui un domani potrai inserire il codice per inviare davvero l'email (es. EmailJS o una tua API)
+        alert('Messaggio inviato con successo!');
+        contactForm.reset(); // Svuota i campi dopo l'invio
+    });
+}
