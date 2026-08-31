@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --primary: #f95959;        /* Rosso/Corallo */
+    --primary-hover: #f65a5b;  /* Leggera variazione per hover/ombre */
+    --dark-light: #455d7a;     /* Azzurro grigiastro */
+    --dark: #233142;           /* Blu scuro */
+    --dark-darker: #1a2533;         /* Blu molto scuro */
+    --bg-light: #e2e2e2;       /* Grigio chiaro (Sfondo) */
+    --text-white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +25,8 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-color: #e2e2e2;
-    color: #233142;
+    background-color: var(--bg-light);
+    color: var(--dark);
 }
 
 /* Navbar e Navigazione */
@@ -28,7 +38,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: #e2e2e2;
+    background: var(--bg-light);
     transition: all 0.3s ease-in-out;
     z-index: 1000;
 }
@@ -47,20 +57,20 @@ nav.scrolled {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #f95959;
+    background: var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--text-white);
     font-weight: bold;
 }
 .logo-text h2 {
-    color: #f95959;
-    font-size: 1.5rem;
+    color: var(--primary);
+    font-size: 1.7rem;
 }
 .logo-text p {
-    font-size: 0.6rem;
-    color: #233142;
+    font-size: 0.7rem;
+    color: var(--dark-light);
 }
 
 .nav-links {
@@ -71,19 +81,20 @@ nav.scrolled {
 }
 .nav-links a {
     text-decoration: none;
-    color: #233142;
-    font-weight: bold;
-    font-size: 1.1rem;
+    color: var(--dark);
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
 .nav-links a.active {
-    color: #f95959;
+    color: var(--primary);
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-thickness: 3px;
 }
+
 .nav-links a:hover{
-    color: #f95959;
+    color: var(--primary-hover);
+    text-shadow: 0 2px 16px rgb(69, 93, 122, 0.7);
 }
 
 /* Burger Menu */
@@ -95,7 +106,7 @@ nav.scrolled {
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: #233142;
+    background-color: var(--dark);
     margin: 5px;
     transition: all 0.3s ease;
 }
@@ -123,14 +134,14 @@ section {
 .section-title,
 .section-title-line {
     width: 100%;
-    max-width: 1600px; /* Mantiene i contenuti ben proporzionati */
+    max-width: 1400px; /* Mantiene i contenuti ben proporzionati */
     margin-left: auto;
     margin-right: auto;
 }
 .section-title {
     text-align: left;
     font-size: 3.5rem;
-    color: #455d7a;
+    color: var(--dark-light);
     margin-bottom: 15px;
     margin-left: 0;
 }
@@ -140,7 +151,7 @@ section {
     width: 200px;
     max-width: 20vw;
     height: 6px;
-    background: #f95959;
+    background: var(--primary);
     margin-bottom: 40px;
     margin-left: 0;
 }
@@ -151,16 +162,16 @@ section {
     margin-bottom: 50px;
 }
 .hero-header h1 {
-    font-size: 4rem;
-    color: #233142;
+    font-size: 6rem;
+    color: var(--dark);
     margin-bottom: 10px;
 }
 .hero-header h1 span {
-    color: #f95959;
+    color: var(--primary);
 }
 .hero-header p {
     font-style: italic;
-    color: #455d7a;
+    color: var(--dark-light);
     font-size: 1.2rem;
 }
 
@@ -174,8 +185,8 @@ section {
 .hero-image {
     flex: 1;
     min-width: 400px;
-    max-width: 450px;
-    background: #f95959;
+    max-width: 550px;
+    background: var(--primary);
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     box-shadow: 0 10px 40px rgba(246, 90, 91, 0.7);
     display: flex;
@@ -193,10 +204,12 @@ section {
 
 .hero-card {
     flex: 1.2;
-    min-width: 400px;
-    background: #233142;
+    min-width: 450px;
+    max-width: 750px;
+    max-height: 500px;
+    background: var(--dark);
     border-radius: 30px;
-    color: white;
+    color: var(--text-white);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -211,15 +224,15 @@ section {
     justify-content: center;
 }
 .hero-card-content h2 {
-    color: #f95959;
-    font-size: 2.2rem;
+    color: var(--primary);
+    font-size: 2.3rem;
     margin-bottom: 15px;
 }
 .hero-card-content span {
     display: block;
     width: 50%;
     height: 3px;
-    background: #455d7a;
+    background: var(--dark-light);
     margin-bottom: 20px;
 }
 .hero-card-content p {
@@ -243,8 +256,8 @@ section {
 }
 .hero-card-footer a button {
     background: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--text-white);
+    color: var(--text-white);
     padding: 10px 25px;
     border-radius: 25px;
     cursor: pointer;
@@ -252,13 +265,13 @@ section {
     transition: all 0.3s;
 }
 .hero-card-footer a button:hover {
-    background: white;
-    color: #455d7a;
+    background: var(--text-white);
+    color: var(--dark-light);
 }
 
 /* Sezione About Me */
 #about {
-    background: white;
+    background: var(--text-white);
 }
 
 .about-grid {
@@ -272,19 +285,19 @@ section {
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-left: 6px solid #f95959;
+    border-left: 6px solid var(--primary);
 }
 
 #skills {
-    background: #233142;
+    background: var(--dark);
 }
 
 #passions {
-    background: #455d7a;
+    background: var(--dark-light);
 }
 
 .about-box h3 {
-    color: white;
+    color: var(--text-white);
     margin-bottom: 20px;
     font-size: 1.8rem;
     display: flex;
@@ -299,14 +312,14 @@ section {
 }
 
 .about-box h3 span {
-    color: #f95959;
+    color: var(--primary);
     margin: 0 5px;
 }
 
 .about-box p {
     line-height: 1.8;
-    color: #e2e2e2;
-    font-size: 1.05rem;
+    color: var(--bg-light);
+    font-size: 1.1rem;
     font-weight: 400;
     margin-bottom: 20px;
 }
@@ -325,24 +338,46 @@ section {
     object-fit: contain;
 }
 
+.about-footer {
+    width: 80%;
+    margin: 100px auto 0;
+    display: flex;
+}
+
+.about-footer span {
+    display: block;
+    width: 5px;
+    height: 100px;
+    background: var(--primary);
+    margin: 0 auto 20px;
+}
+
+.about-footer p {
+    padding: 20px 20px;
+    font-size: 1.3rem;
+    color: var(--dark-light);
+    font-style: italic;
+    text-shadow: 0 2px 16px rgb(69, 93, 122, 0.7);
+}
+
 /* Sezione Works (Carosello a 3 schede) */
 #works {
-    background: #f95959;
+    background: var(--primary);
 }
 
 #works .section-title {
-    color: #233142;
+    color: var(--dark);
 }
 
 #works .section-title-line {
-    background: #455d7a;
+    background: var(--dark-light);
 }
 
 .carousel-container {
     position: relative;
     width: 100%;
     min-height: 480px;
-    background: #233142;
+    background: var(--dark);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -357,7 +392,7 @@ section {
 
 .slide {
     flex: 0 0 calc((100% - 40px) / 3); /* 3 schede visibili su Desktop */
-    background: #1a2533;
+    background: var(--dark-darker);
     padding: 30px 25px;
     border-radius: 15px;
     text-align: center;
@@ -369,32 +404,38 @@ section {
 }
 
 .slide h3 {
-    color: #f95959;
+    color: var(--primary);
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
 
 .slide p {
     font-size: 1rem;
-    color: white;
+    color: var(--text-white);
     font-weight: 400;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.slide h4{
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
 .slide span {
     display: block;
     width: 50%;
     height: 3px;
-    background: #455d7a;
+    background: var(--dark-light);
     margin: 0 auto 20px;
 }
 
 .slide-button {
     font-size: 1.1rem;
     background: transparent;
-    border: 2px solid #f95959;
-    color: #f95959;
+    border: 2px solid var(--primary);
+    color: var(--primary);
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
@@ -403,17 +444,18 @@ section {
 }
 
 .slide-button:hover {
-    background: white;
-    border-color: white;
-    color: #455d7a;
+    background: var(--text-white);
+    border-color: var(--text-white);
+    box-shadow: 0 4px 24px rgba(246, 90, 91, 0.7);
+    color: var(--dark-light);
 }
 
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #455d7a;
-    color: white;
+    background: var(--dark-light);
+    color: var(--text-white);
     border: none;
     width: 45px;
     height: 45px;
@@ -436,7 +478,7 @@ section {
 }
 
 .carousel-btn:hover {
-    background: #f95959;
+    background: var(--primary-hover);
 }
 
 /* Responsività Carosello */
@@ -457,15 +499,15 @@ section {
 
 /* Sezione Contact */
 #contact {
-    background: #233142;
+    background: var(--dark);
 }
 
 #contact .section-title {
-    color: #f95959;
+    color: var(--primary);
 }
 
 #contact .section-title-line {
-    background: #e2e2e2;
+    background: var(--bg-light);
 }
 
 .contact-container {
@@ -494,14 +536,14 @@ section {
     font-size: 1.3rem;
     text-decoration: none;
     gap: 20px;
-    background: #e2e2e2;
-    color: #455d7a;
+    background: var(--bg-light);
+    color: var(--dark-light);
     padding: 18px 25px;
     border-radius: 12px;
     transition: background 0.3s, transform 0.2s;
 }
 .contact-link:hover {
-    background: white;
+    background: var(--text-white);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7);
     transform: translateY(-2px);
 }
@@ -513,7 +555,7 @@ section {
 .contact-form {
     flex: 1.2;
     min-width: 300px;
-    background: #f95959;
+    background: var(--primary);
     padding: 40px;
     min-width: 400px;
     max-width: 800px;
@@ -525,16 +567,16 @@ section {
     width: 100%;
     margin-bottom: 20px;
     padding: 15px 20px;
-    border: 1px solid #d1d5db;
+    border: 2px solid var(--bg-light);
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 400;
-    background: #f9fafb;
+    background: var(--text-white);
     outline: none;
     transition: border 0.3s;
 }
 .contact-form input:focus, .contact-form textarea:focus {
-    border-color: #233142;
+    border-color: var(--dark);
 }
 .contact-form textarea {
     resize: vertical;
@@ -542,8 +584,8 @@ section {
 }
 .contact-form button {
     width: 100%;
-    background: #455d7a;
-    color: white;
+    background: var(--dark-light);
+    color: var(--text-white);
     border: none;
     padding: 16px;
     border-radius: 10px;
@@ -553,13 +595,13 @@ section {
     transition: background 0.3s;
 }
 .contact-form button:hover {
-    background: #233142;
+    background: var(--dark);
 }
 
 /* Footer */
 #footer {
-    background: #1a2533;
-    color: #e2e2e2;
+    background: var(--dark-darker);
+    color: var(--bg-light);
     text-align: center;
     padding: 30px 20px;
     display: flex;
@@ -570,7 +612,7 @@ section {
     font-weight: 400;
 }
 #footer a {
-    color: #f95959;
+    color: var(--dark-light);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
