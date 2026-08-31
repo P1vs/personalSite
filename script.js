@@ -153,7 +153,7 @@ function moveSlide(direction) {
 // Inizializza e aggiorna al resize della finestra
 window.addEventListener('resize', updateCarousel);
 
-// 4. Logica del Burger Menu Mobile
+// 5. Logica del Burger Menu Mobile
 const burger = document.getElementById('burger');
 const nav = document.querySelector('.nav-links');
 const navLinksItemsDesktop = document.querySelectorAll('.nav-links a');
