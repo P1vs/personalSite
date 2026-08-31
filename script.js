@@ -114,24 +114,26 @@ function getVisibleSlides() {
 }
 
 function updateCarousel() {
+    const slides = getSlides(); // Prende le slide aggiornate!
     if (!track || slides.length === 0) return;
 
     const visibleSlides = getVisibleSlides();
     const maxIndex = Math.max(0, slides.length - visibleSlides);
 
-    // Impedisce di scorrere in spazi vuoti oltre l'ultima scheda
     if (currentIndex > maxIndex) {
         currentIndex = maxIndex;
     }
 
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    const gap = 20; // Deve corrispondere al gap definito nel CSS (.carousel-track)
+    // Aggiungi un controllo di sicurezza nel caso non ci siano slide
+    const slideWidth = slides[0] ? slides[0].getBoundingClientRect().width : 0;
+    const gap = 20; 
     const moveAmount = (slideWidth + gap) * currentIndex;
 
     track.style.transform = `translateX(-${moveAmount}px)`;
 }
 
 function moveSlide(direction) {
+    const slides = getSlides(); // Prende le slide aggiornate!
     if (slides.length === 0) return;
 
     const visibleSlides = getVisibleSlides();
