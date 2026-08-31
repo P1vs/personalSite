@@ -193,17 +193,17 @@ section {
 
 .hero-card {
     flex: 1.2;
-    min-width: 300px;
+    min-width: 400px;
     background: #233142;
     border-radius: 30px;
     color: white;
     display: flex;
     flex-direction: column;
-    max-width: 650px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 .hero-card-content {
+    width: 100%;
     padding: 40px;
     flex-grow: 1;
     display: flex;
