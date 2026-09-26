@@ -359,10 +359,33 @@ section {
     font-style: italic;
     text-shadow: 0 2px 16px rgb(69, 93, 122, 0.7);
 }
+/* sezione Istruction (istruzione e formazione) */
+#istruction {
+    background: var(--dark-light);
+}
+.school-periods{
+    max-width: 80%;
+}
 
+.period{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.period img{
+    min-width: 200px;
+    min-height: 267px;
+    background: var(--dark);
+    object-fit: contain;
+}
 /* Sezione Works (Carosello a 3 schede) */
 #works {
     background: var(--primary);
+    display: none;
 }
 
 #works .section-title {
@@ -771,7 +794,7 @@ section {
         margin-bottom: 50px;
     }
 
-    /* Sezione Projects (Carosello) */
+    /* Sezione Projects */
     .carousel-container {
         padding: 50px 75px;
         min-height: 520px;
